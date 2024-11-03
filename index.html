@@ -29,7 +29,11 @@
 
     margin-top: -180px;    /* Espaçamento padrão para desktop */
 }
-
+@supports (-webkit-appearance: none) and (max-width: 1200px) {
+    .masthead {
+        margin-top: -180px; /* Ajuste para laptops menores */
+    }
+}
 /* Ajuste para telas menores */
 @media (max-width: 1200px) {
     .masthead {
