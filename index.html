@@ -29,15 +29,27 @@
 
     margin-top: -180px;    /* Espaçamento padrão para desktop */
 }
-@supports (-webkit-appearance: auto) {
-    .masthead {
-        margin-top: -280px; /* Ajuste para laptops menores */
+@media (max-width: 1200px) {
+    @supports (-webkit-appearance: auto) {
+        .masthead {
+            margin-top: -280px; /* Ajuste para Chrome e Edge em laptops menores */
+        }
     }
 }
-/* Ajuste para telas menores */
+
+/* Ajuste para Firefox em telas menores (até 1200px) */
+@media (max-width: 1200px) {
+    @-moz-document url-prefix() {
+        .masthead {
+            margin-top: -250px; /* Ajuste para Firefox em laptops menores */
+        }
+    }
+}
+
+/* Ajuste geral para todos os navegadores em telas menores (fallback) */
 @media (max-width: 1200px) {
     .masthead {
-        margin-top: -220px; /* Ajuste para laptops menores */
+        margin-top: -220px; /* Ajuste geral para laptops menores */
     }
 }
 
